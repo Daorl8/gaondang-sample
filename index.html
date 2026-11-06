@@ -16,7 +16,7 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#E7501B" />
+<meta name="theme-color" content="#FFFFFF" />
 <link rel="icon" href="favicon.png" type="image/png" />
 <link rel="preload" href="gd-gothic-b.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="gd-pretendard.woff2" as="font" type="font/woff2" crossorigin />
@@ -92,16 +92,16 @@ h1,h2,h3,p{ margin:0; }
 .head-cta{ min-height:42px; padding:0 18px; font-size:.88rem; }
 @media (max-width:899px){ .head-cta{ display:none; } }
 
-/* 히어로: 주황 면 */
-.hero{ background:var(--orange); color:var(--white); }
-.hero .wrap{ display:grid; gap:40px; padding:56px 0 64px; align-items:center; }
-@media (min-width:900px){ .hero .wrap{ grid-template-columns:5fr 6fr; gap:72px; padding:96px 0; } }
-.hero .logo{ width:132px; }
-.hero h1{ margin-top:32px; font-family:var(--head); font-weight:700; font-size:clamp(2.4rem,6.4vw,4rem); line-height:1.22; letter-spacing:-.035em; }
-.hero p.big{ margin-top:22px; font-size:1.2rem; font-weight:600; line-height:1.65; max-width:22em; }
+/* 히어로: 흰 바탕 + 매장 사진 (v0.2 · 주황은 로고 · 버튼만) */
+.hero{ background:var(--white); color:var(--ink); }
+.hero .wrap{ display:grid; gap:40px; padding:48px 0 72px; align-items:center; }
+@media (min-width:900px){ .hero .wrap{ grid-template-columns:4fr 7fr; gap:72px; padding:80px 0 112px; } }
+.hero .logo{ width:112px; }
+.hero h1{ margin-top:32px; font-family:var(--head); font-weight:700; font-size:clamp(2.3rem,5.8vw,3.7rem); line-height:1.25; letter-spacing:-.035em; }
+.hero p.big{ margin-top:20px; font-size:1.06rem; line-height:1.75; max-width:24em; color:var(--soft); }
 .hero .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
 .hero figure{ margin:0; }
-.hero figure img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
+.hero figure img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r); }
 
 /* 새벽 */
 .dawn .wrap{ display:grid; gap:48px; align-items:center; }
@@ -172,12 +172,12 @@ h1,h2,h3,p{ margin:0; }
 .visit .cta{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; }
 .map{ width:100%; aspect-ratio:4/3; border:0; border-radius:var(--r); background:var(--white); }
 
-/* 푸터: 주황 */
-.foot{ background:var(--orange); color:var(--white); text-align:center; padding:60px 0 calc(110px + env(safe-area-inset-bottom)); }
+/* 푸터: 흰 바탕 (v0.2) */
+.foot{ background:var(--white); color:var(--ink); border-top:1px solid var(--line); text-align:center; padding:60px 0 calc(110px + env(safe-area-inset-bottom)); }
 @media (min-width:900px){ .foot{ padding:76px 0; } }
-.foot img{ width:120px; margin:0 auto 22px; }
-.foot .line{ font-family:var(--head); font-size:1.35rem; }
-.foot p.s{ margin-top:10px; font-size:1rem; font-weight:600; }
+.foot img{ width:96px; margin:0 auto 22px; }
+.foot .line{ font-family:var(--head); font-size:1.3rem; }
+.foot p.s{ margin-top:10px; font-size:.92rem; color:var(--soft); }
 .foot a{ text-decoration:underline; text-underline-offset:3px; }
 
 /* 모바일 하단 바 (불투명) */
@@ -204,10 +204,10 @@ h1,h2,h3,p{ margin:0; }
 </header>
 
 <main id="top">
-  <section class="hero on-orange">
+  <section class="hero">
     <div class="wrap">
       <div class="reveal">
-        <img class="logo" src="gd-logo-w.webp" alt="가온당 베이커리 카페 로고" width="520" height="598" />
+        <img class="logo" src="gd-logo.webp" alt="가온당 베이커리 카페 로고" width="520" height="598" />
         <h1>매일 새벽,<br />매장에서 굽습니다</h1>
         <p class="big">천연 발효종으로 정성껏 구워낸 빵과 향긋한 커피. 인천 주안의 베이커리 카페, 가온당입니다.</p>
         <div class="cta">
@@ -219,7 +219,7 @@ h1,h2,h3,p{ margin:0; }
     </div>
   </section>
 
-  <section class="sec dawn" id="dawn" aria-labelledby="dawn-h">
+  <section class="sec dawn" id="dawn" aria-labelledby="dawn-h" style="border-top:1px solid var(--line)">
     <div class="wrap">
       <div class="reveal">
         <p class="label">FRESH EVERY DAY</p>
@@ -299,7 +299,7 @@ h1,h2,h3,p{ margin:0; }
 
 <footer class="foot">
   <div class="wrap">
-    <img src="gd-logo-w.webp" alt="" width="520" height="598" loading="lazy" />
+    <img src="gd-logo.webp" alt="" width="520" height="598" loading="lazy" />
     <p class="line">당신의 이야기가 시작되는 곳, 가온당</p>
     <p class="s">인천 미추홀구 인주대로 380 · 032-876-8988 · <a href="https://www.instagram.com/gaondang_bakery/" target="_blank" rel="noopener">@gaondang_bakery</a></p>
     <p class="s">© 가온당</p>
