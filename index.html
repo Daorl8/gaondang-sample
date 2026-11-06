@@ -133,8 +133,11 @@ h1,h2,h3,p{ margin:0; }
   .breads .p3{ grid-column:9 / 13; grid-row:span 3; aspect-ratio:auto; }
   .breads .cap{ grid-column:1 / -1; grid-row:span 1; }
 }
-.breads .m{ aspect-ratio:3/4; }
-.breads .p1, .breads .p2, .breads .p3{ aspect-ratio:1; }
+/* 모바일 전용 비율 (PC 규칙보다 뒤에 있어도 PC를 덮어쓰지 않도록 범위 제한) */
+@media (max-width:899px){
+  .breads .m{ aspect-ratio:3/4; }
+  .breads .p1, .breads .p2, .breads .p3{ aspect-ratio:1; }
+}
 .bread-names{ grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:8px 26px; padding-top:18px; border-top:1px solid var(--line); font-size:.95rem; }
 .bread-names b{ font-weight:700; }
 .bread-names span{ color:var(--soft); }
