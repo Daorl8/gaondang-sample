@@ -137,6 +137,9 @@ h1,h2,h3,p{ margin:0; }
 }
 /* 모바일 전용 비율 (PC 규칙보다 뒤에 있어도 PC를 덮어쓰지 않도록 범위 제한) */
 @media (max-width:899px){
+  /* 1fr은 내용물 최소폭 아래로 못 줄어 비율 고정 사진이 칸을 밀어냄 → 가로 넘침. minmax(0,…)로 하한 제거 */
+  .breads{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .space-photos{ grid-template-columns:minmax(0,2fr) minmax(0,3fr); }
   .breads .m{ aspect-ratio:3/4; }
   .breads .p1, .breads .p2, .breads .p3{ aspect-ratio:1; }
 }
@@ -282,7 +285,7 @@ h1,h2,h3,p{ margin:0; }
         <p class="label">VISIT</p>
         <h2 id="visit-h" class="h2">오시는 길</h2>
         <dl class="info">
-          <div><dt>주소</dt><dd><b>인천 미추홀구 인주대로 380 1, 2층</b><small>인천2시민공원역 2번 출구에서 973m</small></dd></div>
+          <div><dt>주소</dt><dd><b>인천 미추홀구 인주대로 380 1, 2층</b><small>인천 2호선 시민공원역 2번 출구에서 973m</small></dd></div>
           <div><dt>주안역</dt><dd>버스 5-1, 65, 514-1, 515, 511, 516, 518, 이천e음31<small>약 10분 거리</small></dd></div>
           <div><dt>시민공원역</dt><dd>버스 518, 514-1, 65, 8, 15, 33<small>약 5분 거리</small></dd></div>
           <div><dt>자가용</dt><dd>'가온당' 또는 주소로 검색해 주세요.<small>주차가 필요하신 분은 매장으로 연락 주세요 :)</small></dd></div>
