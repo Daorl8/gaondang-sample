@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>가온당 | 인천 주안 베이커리 카페 · 매일 새벽 직접 굽는 빵</title>
-<meta name="description" content="인천 미추홀구 주안 베이커리 카페 가온당. 매일 새벽 매장에서 천연 발효종으로 직접 굽는 빵, 당일 생산 당일 판매. 남은 빵은 이웃과 나눕니다. 연중무휴 09:00~22:00." />
+<meta name="description" content="인천 미추홀구 주안 대형 베이커리 카페 가온당. 남녀노소 누구나, 가족과 함께 편하게 머무는 넓은 1·2층. 매일 새벽 매장에서 천연 발효종으로 직접 굽는 빵, 당일 생산 당일 판매. 남은 빵은 이웃과 나눕니다. 연중무휴 09:00~22:00." />
 <link rel="canonical" href="https://gaondang-sample.lgt3232.workers.dev/" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ko_KR" />
@@ -16,9 +16,9 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#FFFFFF" />
+<meta name="theme-color" content="#F8F4EE" />
 <link rel="icon" href="favicon.png" type="image/png" />
-<link rel="preload" href="gd-orbit.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="gd-hahmlet.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="gd-pretendard.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="gd-display.webp" as="image" />
 <!-- 시안 도메인 = gaondang-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 치환 -->
@@ -38,17 +38,20 @@
 }
 </script>
 <style>
-@font-face{ font-family:"GD Head"; font-weight:400; font-display:swap; src:url("gd-orbit.woff2") format("woff2"); }
+@font-face{ font-family:"GD Head"; font-weight:500; font-display:swap; src:url("gd-hahmlet.woff2") format("woff2"); }
 @font-face{ font-family:"GD Sans"; font-weight:400 700; font-display:swap; src:url("gd-pretendard.woff2") format("woff2"); }
 
 :root{
-  --orange:#E7501B;      /* 로고 · 인스타 주황 타일 실측(231,80,27) · 흰 글자 3.8:1 → 큰 글자 전용 */
-  --orange-t:#C84012;    /* 흰 바탕 위 글자용 주황 5.0:1 */
-  --white:#FFFFFF;
-  --paper:#F5F5F4;
-  --ink:#1E1A18;
-  --soft:#5F5A57;        /* 6.5:1 */
-  --line:#E2E0DE;
+  /* v0.3 사장님 요청 "따뜻하고 고급스러운" → 웜 아이보리 + 원목 브라운 (매장 원목 · 짙은 나무 테두리 근거) */
+  --orange:#E7501B;      /* 로고 실측 · 로고에만 */
+  --orange-t:#C84012;    /* 채움 버튼 (흰 글자 5.0:1) */
+  --white:#F8F4EE;       /* 바탕 웜 아이보리 (변수명 유지) */
+  --paper:#F0E9DF;       /* 띠 크림 */
+  --ink:#2B211B;         /* 14.4:1 */
+  --soft:#6B5E54;        /* 5.7:1 · 크림 위 5.2:1 */
+  --wood:#7A5536;        /* 라벨 · 번호 6.0:1 */
+  --deep:#3B2B21;        /* 나눔 섹션 짙은 원목 면 */
+  --line:#E5DCD0;
   --head:"GD Head","GD Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --sans:"GD Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --wrap:1160px;
@@ -66,27 +69,21 @@ h1,h2,h3,p{ margin:0; }
 @media (min-width:900px){ .sec{ padding:140px 0; } }
 .paper{ background:var(--paper); }
 
-.label{ font-size:.82rem; font-weight:700; letter-spacing:.14em; color:var(--orange-t); }
-/* 오르빗은 띄어쓰기 폭이 넓어 제목 계열만 살짝 좁힘 */
-.h2, .hero h1, .share h2, .fact h3, .foot .line{ word-spacing:-.14em; }
-.h2{ margin-top:14px; font-family:var(--head); font-weight:400; font-size:clamp(2rem,4.8vw,3rem); line-height:1.35; letter-spacing:0; }
+.label{ font-size:.8rem; font-weight:600; letter-spacing:.2em; color:var(--wood); }
+.h2{ margin-top:14px; font-family:var(--head); font-weight:500; font-size:clamp(2rem,4.8vw,3rem); line-height:1.35; letter-spacing:-.01em; }
 .desc{ margin-top:18px; max-width:32em; color:var(--soft); font-size:1.03rem; }
 
 .btn{ display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 26px; border:1.5px solid var(--ink); border-radius:var(--r); font-size:.98rem; font-weight:700; transition:background .2s ease, color .2s ease, transform .15s ease; }
-.btn.fill{ background:var(--orange); border-color:var(--orange); color:var(--white); }
+.btn.fill{ background:var(--orange-t); border-color:var(--orange-t); color:#fff; }
 .btn:active{ transform:scale(.98); }
-@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--white); } .btn.fill:hover{ background:var(--orange-t); border-color:var(--orange-t); } }
-/* 주황 면 위 버튼 */
-.on-orange .btn{ border-color:var(--white); color:var(--white); }
-.on-orange .btn.fill{ background:var(--white); color:var(--orange-t); }
-@media (hover:hover){ .on-orange .btn:not(.fill):hover{ background:var(--white); color:var(--orange-t); } .on-orange .btn.fill:hover{ background:#FFE9DF; border-color:#FFE9DF; } }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--white); } .btn.fill:hover{ background:#A9350E; border-color:#A9350E; } }
 
 /* 헤더 */
-.site-head{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); }
+.site-head{ position:sticky; top:0; z-index:50; background:rgba(248,244,238,.97); border-bottom:1px solid var(--line); }
 .site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; }
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand img{ width:34px; }
-.brand b{ font-family:var(--head); font-weight:400; font-size:1.25rem; letter-spacing:.08em; }
+.brand b{ font-family:var(--head); font-weight:500; font-size:1.25rem; letter-spacing:.08em; }
 .brand small{ font-size:.78rem; color:var(--soft); letter-spacing:.12em; }
 .nav{ display:none; gap:28px; font-size:.95rem; font-weight:500; }
 @media (min-width:900px){ .nav{ display:flex; } }
@@ -94,12 +91,12 @@ h1,h2,h3,p{ margin:0; }
 .head-cta{ min-height:42px; padding:0 18px; font-size:.88rem; }
 @media (max-width:899px){ .head-cta{ display:none; } }
 
-/* 히어로: 흰 바탕 + 매장 사진 (v0.2 · 주황은 로고 · 버튼만) */
+/* 히어로: 아이보리 바탕 + 매장 사진 (주황은 로고 · 버튼만) */
 .hero{ background:var(--white); color:var(--ink); }
 .hero .wrap{ display:grid; gap:40px; padding:48px 0 72px; align-items:center; }
-@media (min-width:900px){ .hero .wrap{ grid-template-columns:4fr 7fr; gap:72px; padding:80px 0 112px; } }
+@media (min-width:900px){ .hero .wrap{ grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:72px; padding:80px 0 112px; } }
 .hero .logo{ width:112px; }
-.hero h1{ margin-top:32px; font-family:var(--head); font-weight:400; font-size:clamp(2.4rem,6vw,3.9rem); line-height:1.3; letter-spacing:0; }
+.hero h1{ margin-top:32px; font-family:var(--head); font-weight:500; font-size:clamp(2.4rem,6vw,3.9rem); line-height:1.3; letter-spacing:-.015em; }
 .hero p.big{ margin-top:20px; font-size:1.06rem; line-height:1.75; max-width:24em; color:var(--soft); }
 .hero .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
 .hero figure{ margin:0; }
@@ -107,21 +104,21 @@ h1,h2,h3,p{ margin:0; }
 
 /* 새벽 */
 .dawn .wrap{ display:grid; gap:48px; align-items:center; }
-@media (min-width:900px){ .dawn .wrap{ grid-template-columns:6fr 5fr; gap:88px; } }
+@media (min-width:900px){ .dawn .wrap{ grid-template-columns:minmax(0,6fr) minmax(0,5fr); gap:88px; } }
 .facts{ margin-top:36px; display:grid; gap:0; }
-.fact{ display:grid; grid-template-columns:56px 1fr; gap:14px; padding:20px 0; border-top:1px solid var(--line); }
+.fact{ display:grid; grid-template-columns:56px minmax(0,1fr); gap:14px; padding:20px 0; border-top:1px solid var(--line); }
 .fact:last-child{ border-bottom:1px solid var(--line); }
-.fact .n{ font-family:var(--head); font-weight:400; font-size:1.5rem; color:var(--orange-t); line-height:1.2; }
-.fact h3{ font-family:var(--head); font-weight:400; font-size:1.2rem; }
+.fact .n{ font-family:var(--head); font-weight:500; font-size:1.5rem; color:var(--wood); line-height:1.2; }
+.fact h3{ font-family:var(--head); font-weight:500; font-size:1.22rem; }
 .fact p{ margin-top:4px; color:var(--soft); font-size:.96rem; }
 .dawn figure{ margin:0; }
 .dawn img{ width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--r); }
 
 /* 진열대 */
 .case-head{ display:grid; gap:6px; margin-bottom:48px; }
-@media (min-width:900px){ .case-head{ grid-template-columns:1fr 1fr; gap:64px; align-items:end; margin-bottom:60px; } .case-head .desc{ margin-top:0; justify-self:end; } }
-.breads{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-@media (min-width:900px){ .breads{ grid-template-columns:repeat(12,1fr); grid-auto-rows:120px; gap:20px; } }
+@media (min-width:900px){ .case-head{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:64px; align-items:end; margin-bottom:60px; } .case-head .desc{ margin-top:0; justify-self:end; } }
+.breads{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+@media (min-width:900px){ .breads{ grid-template-columns:repeat(12,minmax(0,1fr)); grid-auto-rows:120px; gap:20px; } }
 .breads figure{ margin:0; position:relative; }
 .breads img{ width:100%; height:100%; object-fit:cover; border-radius:var(--r); }
 .breads figcaption{ margin-top:10px; font-weight:700; font-size:.98rem; }
@@ -138,8 +135,6 @@ h1,h2,h3,p{ margin:0; }
 /* 모바일 전용 비율 (PC 규칙보다 뒤에 있어도 PC를 덮어쓰지 않도록 범위 제한) */
 @media (max-width:899px){
   /* 1fr은 내용물 최소폭 아래로 못 줄어 비율 고정 사진이 칸을 밀어냄 → 가로 넘침. minmax(0,…)로 하한 제거 */
-  .breads{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .space-photos{ grid-template-columns:minmax(0,2fr) minmax(0,3fr); }
   .breads .m{ aspect-ratio:3/4; }
   .breads .p1, .breads .p2, .breads .p3{ aspect-ratio:1; }
 }
@@ -147,28 +142,34 @@ h1,h2,h3,p{ margin:0; }
 .bread-names b{ font-weight:700; }
 .bread-names span{ color:var(--soft); }
 
-/* 나눔: 주황 면 */
-.share{ background:var(--orange); color:var(--white); text-align:center; }
-.share .icon{ width:72px; margin:0 auto; }
-.share h2{ margin-top:28px; font-family:var(--head); font-weight:400; font-size:clamp(2.1rem,5.2vw,3.3rem); line-height:1.35; letter-spacing:0; }
-.share p{ margin:22px auto 0; max-width:26em; font-size:1.2rem; font-weight:600; line-height:1.7; }
+/* 나눔: 짙은 원목 면 (v0.3 · 주황 면 → 차분한 고급감) */
+.share{ background:var(--deep); color:var(--white); text-align:center; }
+.share .icon{ width:64px; margin:0 auto; opacity:.9; }
+.share h2{ margin-top:28px; font-family:var(--head); font-weight:500; font-size:clamp(2.1rem,5.2vw,3.3rem); line-height:1.35; letter-spacing:-.01em; }
+.share p{ margin:22px auto 0; max-width:26em; font-size:1.1rem; line-height:1.8; color:#E3D6C8; }
 
-/* 공간 */
-.space .wrap{ display:grid; gap:44px; }
-@media (min-width:900px){ .space .wrap{ grid-template-columns:5fr 7fr; gap:80px; align-items:center; } }
-.space-photos{ display:grid; grid-template-columns:2fr 3fr; gap:14px; align-items:end; }
-@media (min-width:900px){ .space-photos{ gap:20px; } }
+/* 공간: 넓은 매장이 보이도록 사진 3장 크게 */
+.space-head{ display:grid; gap:6px; margin-bottom:44px; }
+@media (min-width:900px){ .space-head{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:64px; align-items:end; margin-bottom:56px; } .space-head .side{ justify-self:end; max-width:32em; } .space-head .desc{ margin-top:0; } }
+.space-photos{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
 .space-photos figure{ margin:0; }
-.space-photos .t img{ width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:var(--r); }
-.space-photos .w img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--r); }
-.tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+.space-photos img{ width:100%; height:100%; object-fit:cover; border-radius:var(--r); }
+.space-photos .w{ grid-column:1 / -1; aspect-ratio:16/9; }
+.space-photos .o, .space-photos .t{ aspect-ratio:3/4; }
+@media (min-width:900px){
+  .space-photos{ grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr); grid-template-rows:520px; gap:20px; }
+  .space-photos .w{ grid-column:2; grid-row:1; aspect-ratio:auto; }
+  .space-photos .o{ grid-column:1; grid-row:1; aspect-ratio:auto; }
+  .space-photos .t{ grid-column:3; grid-row:1; aspect-ratio:auto; }
+}
+.tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
 .tags span{ padding:6px 12px; border:1px solid var(--line); border-radius:var(--r); font-size:.88rem; color:var(--soft); }
 
 /* 오시는 길 */
 .visit .wrap{ display:grid; gap:44px; }
-@media (min-width:900px){ .visit .wrap{ grid-template-columns:5fr 6fr; gap:72px; align-items:center; } }
+@media (min-width:900px){ .visit .wrap{ grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:72px; align-items:center; } }
 .info{ margin:28px 0 0; }
-.info div{ display:grid; grid-template-columns:80px 1fr; gap:12px; padding:15px 0; border-top:1px solid var(--line); }
+.info div{ display:grid; grid-template-columns:80px minmax(0,1fr); gap:12px; padding:15px 0; border-top:1px solid var(--line); }
 .info div:last-child{ border-bottom:1px solid var(--line); }
 .info dt{ font-weight:700; }
 .info dd{ margin:0; color:var(--soft); }
@@ -177,18 +178,18 @@ h1,h2,h3,p{ margin:0; }
 .visit .cta{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; }
 .map{ width:100%; aspect-ratio:4/3; border:0; border-radius:var(--r); background:var(--white); }
 
-/* 푸터: 흰 바탕 (v0.2) */
+/* 푸터: 아이보리 바탕 */
 .foot{ background:var(--white); color:var(--ink); border-top:1px solid var(--line); text-align:center; padding:60px 0 calc(110px + env(safe-area-inset-bottom)); }
 @media (min-width:900px){ .foot{ padding:76px 0; } }
 .foot img{ width:96px; margin:0 auto 22px; }
-.foot .line{ font-family:var(--head); font-weight:400; font-size:1.35rem; }
+.foot .line{ font-family:var(--head); font-weight:500; font-size:1.35rem; }
 .foot p.s{ margin-top:10px; font-size:.92rem; color:var(--soft); }
 .foot a{ text-decoration:underline; text-underline-offset:3px; }
 
 /* 모바일 하단 바 (불투명) */
-.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--white); border-top:1px solid var(--line); }
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr); gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--white); border-top:1px solid var(--line); }
 .quick a{ display:flex; align-items:center; justify-content:center; min-height:48px; border:1.5px solid var(--ink); border-radius:var(--r); font-size:.9rem; font-weight:700; background:var(--white); }
-.quick a.fill{ background:var(--orange); border-color:var(--orange); color:var(--white); }
+.quick a.fill{ background:var(--orange-t); border-color:var(--orange-t); color:#fff; }
 @media (min-width:900px){ .quick{ display:none; } }
 
 /* 리빌: 사진 로드 후 페이드 (setInterval) */
@@ -214,7 +215,7 @@ h1,h2,h3,p{ margin:0; }
       <div class="reveal">
         <img class="logo" src="gd-logo.webp" alt="가온당 베이커리 카페 로고" width="520" height="598" />
         <h1>매일 새벽,<br />매장에서 굽습니다</h1>
-        <p class="big">천연 발효종으로 정성껏 구워낸 빵과 향긋한 커피. 인천 주안의 베이커리 카페, 가온당입니다.</p>
+        <p class="big">천연 발효종으로 정성껏 구워낸 빵과 향긋한 커피. 남녀노소 누구나, 가족과 함께 편하게 머무는 인천 주안의 베이커리 카페, 가온당입니다.</p>
         <div class="cta">
           <a class="btn fill" href="https://map.naver.com/p/entry/place/2015276527" target="_blank" rel="noopener">네이버 길찾기</a>
           <a class="btn" href="tel:0328768988">전화하기</a>
@@ -243,7 +244,7 @@ h1,h2,h3,p{ margin:0; }
     <div class="wrap">
       <div class="case-head reveal">
         <div><p class="label">TODAY'S SHELF</p><h2 id="case-h" class="h2">오늘의 진열대</h2></div>
-        <p class="desc">매일 갓 구운 빵으로 진열대를 채웁니다. 음료와 베이커리 모두 매장 이용과 포장이 가능해요.</p>
+        <p class="desc">매일 갓 구운 다양한 빵으로 긴 진열대를 채웁니다. 음료와 베이커리 모두 매장 이용과 포장이 가능해요.</p>
       </div>
       <div class="breads">
         <figure class="wide reveal"><img src="gd-shelf.webp" alt="여러 단의 진열대에 놓인 페이스트리와 구움과자" width="1100" height="1100" loading="lazy" /></figure>
@@ -256,7 +257,7 @@ h1,h2,h3,p{ margin:0; }
     </div>
   </section>
 
-  <section class="sec share on-orange" id="share" aria-labelledby="share-h">
+  <section class="sec share" id="share" aria-labelledby="share-h">
     <div class="wrap reveal">
       <img class="icon" src="gd-icon-w.webp" alt="" width="240" height="235" />
       <h2 id="share-h">남은 빵의 따뜻함까지</h2>
@@ -266,15 +267,17 @@ h1,h2,h3,p{ margin:0; }
 
   <section class="sec space" id="space" aria-labelledby="space-h">
     <div class="wrap">
-      <div class="reveal">
-        <p class="label">SPACE</p>
-        <h2 id="space-h" class="h2">잠시 쉬어가는<br />1층과 2층</h2>
-        <p class="desc">바쁜 일상 속 잠시 쉬어갈 수 있는 따뜻하고 편안한 공간을 준비했습니다. 큰 창으로 햇빛이 드는 1·2층 매장이에요.</p>
-        <div class="tags"><span>연중무휴 09:00 ~ 22:00</span><span>매장 이용</span><span>포장 가능</span></div>
+      <div class="space-head reveal">
+        <div><p class="label">SPACE</p><h2 id="space-h" class="h2">넓고 쾌적한<br />1층과 2층</h2></div>
+        <div class="side">
+          <p class="desc">남녀노소 누구나, 가족과 함께 편하게 머물 수 있는 넓은 공간을 준비했습니다. 큰 창으로 햇빛이 드는 1·2층에서 바쁜 일상 속 잠시 쉬어가세요.</p>
+          <div class="tags"><span>연중무휴 09:00 ~ 22:00</span><span>1·2층 매장</span><span>매장 이용 · 포장 가능</span></div>
+        </div>
       </div>
       <div class="space-photos">
+        <figure class="w reveal"><img src="gd-seat.webp" alt="흰 벽 아래 넉넉한 간격으로 놓인 원목 소파 좌석" width="1080" height="510" loading="lazy" /></figure>
+        <figure class="o reveal"><img src="gd-overview.webp" alt="위에서 내려다본 긴 빵 진열대와 넓은 좌석" width="640" height="666" loading="lazy" /></figure>
         <figure class="t reveal"><img src="gd-stair.webp" alt="통창으로 빛이 드는 2층으로 오르는 계단" width="640" height="1136" loading="lazy" /></figure>
-        <figure class="w reveal"><img src="gd-seat.webp" alt="흰 벽을 따라 놓인 원목 좌석" width="900" height="495" loading="lazy" /></figure>
       </div>
     </div>
   </section>
